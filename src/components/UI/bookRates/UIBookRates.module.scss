@@ -1,0 +1,32 @@
+.book_rates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Bebas Neue";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+
+    .price_absent {
+        span {
+            display: block;
+            font-size: 18px;
+            line-height: 123%;
+        }
+    }
+
+    .isbn {
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
+
+._large {
+    font-size: 40px;
+    line-height: 150%;
+}
+
+.card__favourites,
+.card__store {
+    display: block;
+}

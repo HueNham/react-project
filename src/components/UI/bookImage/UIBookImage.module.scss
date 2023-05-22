@@ -1,0 +1,64 @@
+.book_card__favourites {
+    &.book_image {
+        flex: 0 1 30%;
+    }
+}
+
+.book_image {
+    position: relative;
+    height: 100%;
+    z-index: 2;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+.bg_blue::after {
+    background-color: var(--additional-blue);
+}
+.bg_orange::after {
+    background-color: var(--additional-orange);
+}
+.image_medium {
+    height: 264px;
+}
+.image_large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        & img {
+            max-width: 300px;
+        }
+}
+
+.book_image {
+    display: flex;
+    .image_placeholder {
+        background-color: antiquewhite;
+        width: 50%;
+        height: 80%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 472px) {
+    .image_large {
+        & img {
+            max-width: 220px;
+        }
+    }
+}
+
+

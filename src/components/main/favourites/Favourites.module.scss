@@ -1,0 +1,13 @@
+.section_container {
+    height: 100%;
+}
+
+.favourites_card {
+    margin-top: 20px;
+}
+
+.favourites_card > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
