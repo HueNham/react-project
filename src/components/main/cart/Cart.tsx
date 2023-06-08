@@ -40,17 +40,17 @@ const Cart: React.FC = () => {
     useEffect(() => {
         if (!preparedData.length && books.length && page !== 1) {
             setPage(page => page - 1)
-            dispatch(pageFilter(page - 1)) // Проверка если удаляем ВСЕ книги не с первой страницы
+            dispatch(pageFilter(page - 1)) //kiểm tra xem khi xóa toàn bộ sách, có đang ở trang đầu tiên của danh sách hay không.
         } 
          else if (!preparedData.length && books.length && page === 1) {
             setPage(1)
-            dispatch(pageFilter(1))  // Аналогично с первой
+            dispatch(pageFilter(1))  // kiểm tra xem có Tương tự như trang đầu tiên k
         }
          else if (preparedData.length < 3 && books.length) {
             if (books.length >= page * +pageSize) {
-                dispatch(pageFilter(page))
+                dispatch(pageFilter(page)) //kiểm tra nếu đang xóa tất cả sách không phải từ trang đầu tiên
             } else {
-                return // берем книжки с конца или не трогаем если длина массива равна длине массива с учетом текущей страницы
+                return // \
             }
         }
     }, [preparedData, books, page])

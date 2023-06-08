@@ -84,7 +84,7 @@ const SignUp = () => {
                     value={value}
                     onChange={handleChangeValue}
                 >
-                    <InputTooltip text={'Only [A-Za-z0-9], 4-40 symbols'}/>
+                    <InputTooltip text={'Only number or english characters can be input, 1-40 character'}/>
                 </FormInput>
                 <FormInput 
                     title='Email' 
