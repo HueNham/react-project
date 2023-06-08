@@ -12,7 +12,6 @@ const initialState: IInitialState = {
     data: [],
     loading: false,
     error: false,
-    //isSubmited: false,
 };
 
 export const fetchBooks = createAsyncThunk<
@@ -35,9 +34,6 @@ const booksSlice = createSlice({
         setSearchField(state, { payload }: PayloadAction<string>) {
             state.searchField = payload;
         },
-        // setPage(state, { payload }: PayloadAction<number>) {
-        //     state.page = payload;
-        // },
     },
     extraReducers: (builder) => {
         builder

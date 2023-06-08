@@ -6,7 +6,6 @@ const Greeting: React.FC = () => {
     return (
       <div className={s.greeting_container}>
           <span className={s.greeting}>Welcome !</span>
-          {/* <span className={s.user}>Ivan</span> */}
       </div>
     )
 }
