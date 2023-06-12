@@ -36,7 +36,7 @@ const ResultsPage: React.FC = () => {
     } = useAppSelector((state) => state.books);
 
     const { priceOrder, preparedData } = useAppSelector((state) => state.filter);
-    const isEmptyData = _isEmpty(preparedData); // проверяем наличие данных для рендера карточек
+    const isEmptyData = _isEmpty(preparedData); 
 
     const handleChangePage = (event: React.ChangeEvent<unknown>, value: number) => {
         setPaginationPage(value);
@@ -54,10 +54,10 @@ const ResultsPage: React.FC = () => {
             dispatch(setPage(1));
             dispatch(sortByPrice({ priceOrder: priceOrder, books: foundBooks }));
         }
-    }, [foundBooks]); //инициализируем фильтр дефолтными(фиксированной страницей и размером) значениями после ответа от сервера
+    }, [foundBooks]); 
 
     useEffect(() => {
-        dispatch(fetchBooks({ searchField, page: paginationPage }));// при возврате с вкладки favourites не обновлялись данные
+        dispatch(fetchBooks({ searchField, page: paginationPage }));
         const path = `/search/${searchField}?page=${paginationPage}`;
         navigate(path);
     }, [searchField, paginationPage]);
@@ -65,7 +65,7 @@ const ResultsPage: React.FC = () => {
     useEffect(() => {
         setPaginationPage(1);
         dispatch(sortByPrice({ priceOrder: PriceOrder.INITIAL, books: foundBooks }));
-    }, [searchField]); // сброс фильтра, когда вводим новое значение в строку поиска
+    }, [searchField]);
 
     return (
         <section className={s.section_container}>
