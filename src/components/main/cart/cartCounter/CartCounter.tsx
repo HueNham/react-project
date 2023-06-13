@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../../hooks/reduxHooks'
 import { decreaseProductQty, increaseProductQty } from '../../../../features/cart/cartSlice'
 import cn from 'classnames'
@@ -12,8 +12,18 @@ interface ICartCounterProps {
 
 const CartCounter: React.FC<ICartCounterProps> = ({ cName, isbn13 }) => {
     const product = useAppSelector(state => state.cart.userPriceBasket)
-    const [count, setCount] = useState(product[isbn13].count) // берем значение из store(redux)
-    const dispatch = useAppDispatch()
+    // const [count, setCount] = useState(product[isbn13].count) //lấy giá trị từ Redux Store
+    // const dispatch = useAppDispatch()
+
+    const [count, setCount] = useState(0); // Giá trị ban đầu là 0
+    const dispatch = useAppDispatch();
+  
+    useEffect(() => {
+      // Đặt giá trị ban đầu cho count khi product thay đổi
+      if (product[isbn13]) {
+        setCount(product[isbn13].count);
+      }
+    }, [product, isbn13]);
 
     const decreaseCount = () => {
         if (count > 1) {

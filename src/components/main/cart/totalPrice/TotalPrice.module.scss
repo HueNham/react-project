@@ -8,15 +8,21 @@
 }
 
 .sum_container,
-.vat_container,
 .total_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
+
+.shipping_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .sum_container,
-.vat_container {
+.shipping_container {
     font-family: 'Helios';
 
     span:first-child {

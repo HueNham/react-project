@@ -15,7 +15,7 @@ export const getBooksPriceInfo = (arr: ICartBook[]):  IUserPriceBasket => {
         obj['key'] = {
             count: 1,
             price: 1
-        } //default value
+        } //mặc định
     }
 
     return obj
@@ -31,10 +31,7 @@ export const calculatePrice = (obj: IUserPriceBasket) => {
     return Number(price.toFixed(2))
 }
 
-export const calculateVAT = ({ sum }: IPriceRef, vat: number) => {
-    return Number((sum * vat).toFixed(2))
-}
 
-export const calculateTotal = ({ sum, vat }:  IPriceRef) => {
-    return +(sum + vat).toFixed(2)
+export const calculateTotal = ({ sum, shipping }:  IPriceRef) => {
+    return +(sum + shipping).toFixed(2)
 }
