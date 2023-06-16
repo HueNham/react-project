@@ -1,0 +1,13 @@
+.form > *:not(:last-child) {
+    width: 100%;
+    margin-bottom: -6px;
+}
+
+.form > *:last-child {
+    margin-top: 40px;
+}
+.signIn_error {
+    color: rgb(238, 30, 30);
+    text-align: center;
+    margin-top: 10px;
+}

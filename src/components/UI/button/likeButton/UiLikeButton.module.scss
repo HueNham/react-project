@@ -1,0 +1,36 @@
+.heart_container {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    width: 56px;
+    height: 56px;
+    background-color: var(--system-primary);
+
+    &:hover {
+        background-color: var(--system-primary2);
+    }
+}
+
+.heart_btn {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart_active {
+    path {
+        stroke: var(--contextual-color);
+    }
+    fill: var(--contextual-color);  
+}
+
+@media (max-width: 472px) {
+    .heart_container {
+        width: 46px;
+        height: 46px;
+    }
+}
