@@ -34,17 +34,17 @@ const Favourites: React.FC = () => {
     useEffect(() => {
         if (!preparedData.length && books.length && page !== 1) {
             setPage(page => page - 1)
-            dispatch(pageFilter(page - 1)) //
+            dispatch(pageFilter(page - 1)) //kiểm tra điều kiện nếu page có ở trang đầu tiên hay không
         } 
          else if (!preparedData.length && books.length && page === 1) {
             setPage(1)
-            dispatch(pageFilter(1))  //
+            dispatch(pageFilter(1))  //tương tự
         }
          else if (preparedData.length < 3 && books.length) {
             if (books.length >= page * +pageSize) {
                 dispatch(pageFilter(page))
             } else {
-                return // 
+                return 
         }
     }, [preparedData, books, page])
 
@@ -62,7 +62,7 @@ const Favourites: React.FC = () => {
            
             {!books.length 
                 ? 
-                  <UiEmptyPage text='No favourites yet !'>
+                  <UiEmptyPage text='No favourites yet!'>
                       <FavoriteIcon />
                   </UiEmptyPage>
                 :  
