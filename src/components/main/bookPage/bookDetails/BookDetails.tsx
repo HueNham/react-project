@@ -19,10 +19,10 @@ const BookDetails: React.FC = () => {
   const { price, isbn13, title, subtitle, image } = useAppSelector(
     (state) => state.oneBook.book
   );
-  const preview = useAppSelector((state) => state.oneBook.book.pdf); //объект со ссылками
+  const preview = useAppSelector((state) => state.oneBook.book.pdf); /
   const isLogged = useAppSelector((state) => state.auth.isLogged);
   const navigate = useNavigate();
-  const isEmptyPreview = _isEmpty(preview); // проверка что не пустой
+  const isEmptyPreview = _isEmpty(preview); //
 
   const dispatch = useAppDispatch();
 
@@ -63,8 +63,7 @@ const BookDetails: React.FC = () => {
       />
       {preview && !isEmptyPreview && (
         <PreviewBook preview={Object.values(preview)[0]} />
-      )}
-      {/* если не пустой берем первую ссылку */}
+      )
     </div>
   );
 };
