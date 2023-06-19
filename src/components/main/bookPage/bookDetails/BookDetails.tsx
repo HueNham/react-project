@@ -38,8 +38,12 @@ const BookDetails: React.FC = () => {
     isbn13,
   };
 
-  const handleCartClick = () => {
+   const handleCartClick = () => {
     dispatch(addProduct(preparedData.current));
+    setTimeout(() => {
+      toast.success("Added to cart successfully!");
+    }, 0);
+    console.log("2222222")
   };
 
   return (
