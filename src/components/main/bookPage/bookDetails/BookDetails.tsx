@@ -39,12 +39,6 @@ const BookDetails: React.FC = () => {
   };
 
   const handleCartClick = () => {
-    // if (isLogged) {
-    //     dispatch(addProduct(preparedData.current))
-    // } else {
-    //     navigate('/account/auth')
-    // }
-    //For testing purposes only
     dispatch(addProduct(preparedData.current));
   };
 
